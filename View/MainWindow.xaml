@@ -1,0 +1,12 @@
+﻿<Window x:Class="luceed.View.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Polazni prozor" Height="350" Width="525">
+    <Grid>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Button Content="Upit za dio naziva i dohvat i prikaz liste artikala za taj dio naziva" Click="ArticleClick" Margin="10"/>
+            <Button Content="Upit za period obračuna i dohvat obračuna prema točki 3.3. dokumentacije" Click="TransactionTypeClick" Margin="10"/>
+                <Button Content="Upit za period obračuna i dohvat obračuna prema točki 3.4. dokumentacije" Click="TransactionArticleClick" Margin="10"/>
+        </StackPanel>
+    </Grid>
+</Window>

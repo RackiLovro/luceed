@@ -1,0 +1,31 @@
+﻿<Window x:Class="luceed.View.TransactionCalculationArticleView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Upit za period obračuna i dohvat obračuna prema točki 3.3. dokumentacije" Height="700" Width="700">
+
+    <Grid>
+        <StackPanel Margin="10">
+            <DatePicker Name="StartDatePicker" SelectedDate="{Binding StartDate, Mode=TwoWay}" DisplayDateStart="2013-01-01" DisplayDateEnd="2030-01-01" Margin="0,0,0,10"/>
+            <DatePicker Name="EndDatePicker" SelectedDate="{Binding EndDate, Mode=TwoWay}" DisplayDateStart="2013-01-01" DisplayDateEnd="2030-01-01" Margin="0,0,0,10"/>
+            <TextBox Name="BusinessUnitTextBox" Text="{Binding SelectedBusinessUnit, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="0,0,0,10" />
+            <Button Content="Search" Command="{Binding SearchCommand}" Width="80" Height="25"/>
+
+            <ListBox ItemsSource="{Binding TransactionCalculationArticles}" ScrollViewer.VerticalScrollBarVisibility="Auto" Height="500">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel>
+                            <TextBlock Text="{Binding ArtiklUid, StringFormat='UID ARTIKLA: {0}'}" />
+                            <TextBlock Text="{Binding NazivArtikla, StringFormat='NAZIV ARTIKLA: {0}'}" />
+                            <TextBlock Text="{Binding Iznos, StringFormat='IZNOS: {0}'}" />
+                            <TextBlock Text="{Binding Usluga, StringFormat='USLUGA: {0}'}" />
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+
+        </StackPanel>
+    </Grid>
+</Window>
